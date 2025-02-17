@@ -13,9 +13,9 @@ def speak(text):
 def listen():
     with sr.Microphone() as source:
         recognizer.adjust_for_ambient_noise(source)
-        speak("O QUE DESEJA?")
+        speak("What do you wish?")
         audio = recognizer.listen(source)
-        print("Escutando...")
+        print("Listening...")
         
     try:
             text = recognizer.recognize_google(audio, language='pt-BR')
@@ -27,13 +27,13 @@ def listen():
             if "google" in text.lower():
                 os.system("start chrome.exe")
 
-            elif "fechar navegador" in text.lower():
+            elif "close browser" in text.lower():
                 os.system("taskkill /F /IM chrome.exe")
 
             elif "youtube" in text.lower():
                 os.system("start chrome.exe https://www.youtube.com/")
                 
-            elif "jogar" in text.lower():
+            elif "play" in text.lower():
                 steam_path = r"C:\Program Files (x86)\Steam\Steam.exe"
                 window = None
                 for win in gw.getWindowsWithTitle("Steam"):
@@ -50,11 +50,11 @@ def listen():
             elif "spotify" in text.lower():
                 os.system("start spotify.exe")
 
-            elif "placa" in text.lower():
+            elif "video driver" in text.lower():
                 os.startfile("C:\Program Files\AMD\CNext\CNext\RadeonSoftware.exe")
-            
-            elif "Persona 5" or "persona cinco" in text.lower():
-                os.startfile("C:\Program Files (x86)\Steam\steamapps\common\P5R\P5R.exe")
+
+            elif "time" in text.lower():
+                speak("It is now " + date.datetime.now().strftime("%H:%M:%S"))
             
             
 
