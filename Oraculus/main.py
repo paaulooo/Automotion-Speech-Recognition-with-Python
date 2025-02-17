@@ -59,7 +59,7 @@ def listen():
             
 
     except sr.UnknownValueError:
-            speak("Desculpe, não entendi o que você disse.")    
+            speak("Sorry, i don't understand this.")    
 
     return speak(text)
 
