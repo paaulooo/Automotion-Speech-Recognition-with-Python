@@ -18,7 +18,7 @@ def listen():
         print("Listening...")
         
     try:
-            text = recognizer.recognize_google(audio, language='pt-BR')
+            text = recognizer.recognize_google(audio, language='en-US')
             print(text)
 
 
